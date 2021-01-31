@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+	
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+    </head>
+    <body>
+
+    <style>
+		.errorlist{
+			color: red;
+		}
+		label{
+			display:none;
+		} 
+	</style>
+		<section class="container">
+				<div id="page-wrapper" class="sign-in-wrapper">
+					<div class="graphs">
+						<div class="sign-in-form">
+							<div class="sign-in-form-top text-center">
+								<h1>Register</h1>
+							</div>
+							<div class="signin">
+								<div class="row justify-content-center">
+									<div class="col-md-6">
+										<form method="post" class="form">
+											{% csrf_token %}
+											{{form.as_p}}
+											<input type="submit" class="btn btn-primary" value="Register">
+											{% comment %} {% bootstrap_form user_form %}
+											{% buttons %}
+												
+											{% endbuttons %} {% endcomment %}
+										</form>
+									</div>
+								</div>
+
+							</div>
+							<div class="new_people text-center">
+								<h3>You Have An Account</h3>
+								<p></p>
+								<a href="{% url 'login' %}">Login Now!</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			<!--footer section start-->
+				<footer class="diff">
+				<p class="text-center">&copy <script>document.write(new Date().getFullYear())</script> Resale. All Rights Reserved | Design by <a href="" target="_blank">Mateo.</a></p>
+				</footer>
+			<!--footer section end-->
+		</section>
+        
+
+    </body>
+</html>
